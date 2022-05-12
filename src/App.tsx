@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu } from "antd";
+import AppFooter from "./components/AppFooter";
+import AppHeader from "./components/AppHeader";
+
+import "./App.scss";
+import { useState } from "react";
 
 function App() {
+  const [collapsed, setCollapsed] = useState(true);
+
+  const onCollapse = (collapsed: boolean) => {
+    setCollapsed(collapsed);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{ minHeight: "100vh" }}>
+      <Layout.Sider
+        collapsible
+        collapsed={collapsed}
+        onCollapse={onCollapse}
+        style={{ background: "#27273B", color: "#9F9F9F" }}
+      >
+        <Menu />
+      </Layout.Sider>
+      <Layout>
+        <AppHeader />
+        <Layout.Content style={{ backgroundColor: "#1D1B2A" }}></Layout.Content>
+        <AppFooter />
+      </Layout>
+    </Layout>
   );
 }
 
