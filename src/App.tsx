@@ -1,11 +1,15 @@
 import { Layout, Menu, MenuProps } from "antd";
-import AppFooter from "./components/AppFooter";
-import AppHeader from "./components/AppHeader";
-
-import "./App.scss";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartSimple, faUser } from "@fortawesome/free-solid-svg-icons";
+
+import AppHeader from "./components/AppHeader";
+import AppFooter from "./components/AppFooter";
+import User from "./pages/User";
+import Statistics from "./pages/Statistics";
+
+import "./App.scss";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -24,8 +28,20 @@ function getItem(
 }
 
 const items = [
-  getItem("User Account", 1, <FontAwesomeIcon icon={faUser} />),
-  getItem("Statistics", 2, <FontAwesomeIcon icon={faChartSimple} />),
+  getItem(
+    "User Account",
+    1,
+    <Link to="/user">
+      <FontAwesomeIcon icon={faUser} />
+    </Link>
+  ),
+  getItem(
+    "Statistics",
+    2,
+    <Link to="/statictics">
+      <FontAwesomeIcon icon={faChartSimple} />
+    </Link>
+  ),
 ];
 
 function App() {
@@ -47,7 +63,9 @@ function App() {
       </Layout.Sider>
       <Layout>
         <AppHeader />
-        <Layout.Content style={{ backgroundColor: "#1D1B2A" }}></Layout.Content>
+        <Layout.Content style={{ backgroundColor: "#1D1B2A" }}>
+          <Outlet />
+        </Layout.Content>
         <AppFooter />
       </Layout>
     </Layout>
