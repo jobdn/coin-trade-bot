@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Layout, Row } from "antd";
 import { FC } from "react";
 
-const AppFooter: FC = () => {
+const Footer: FC = () => {
   return (
     <Layout.Footer style={{ background: "#27273B", color: "#9F9F9F" }}>
       <Row align="middle" justify="center">
@@ -18,4 +18,4 @@ const AppFooter: FC = () => {
   );
 };
 
-export default AppFooter;
+export default Footer;
