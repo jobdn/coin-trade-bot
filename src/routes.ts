@@ -1,4 +1,4 @@
-import HomePage from "./pages/HomePage";
+import { Homepage } from "./pages/Homepage";
 import NotFound from "./pages/NotFound";
 import Statistics from "./pages/Statistics";
 import User from "./pages/User";
@@ -18,7 +18,7 @@ export enum RouteNames {
 }
 
 export const routes: IRoute[] = [
-  { path: RouteNames.HOMEPAGE, index: true, element: HomePage },
+  { path: RouteNames.HOMEPAGE, index: true, element: Homepage },
   {
     path: RouteNames.USER,
     element: User,
