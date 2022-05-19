@@ -1,3 +1,4 @@
+import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import Statistics from "./pages/Statistics";
 import User from "./pages/User";
@@ -10,13 +11,14 @@ export interface IRoute {
 }
 
 export enum RouteNames {
-  // TODO: I need to do homepage
+  HOMEPAGE = "/",
   USER = "user",
   STATISTICS = "statictics",
   NOT_FOUND = "*",
 }
 
 export const routes: IRoute[] = [
+  { path: RouteNames.HOMEPAGE, index: true, element: HomePage },
   {
     path: RouteNames.USER,
     element: User,

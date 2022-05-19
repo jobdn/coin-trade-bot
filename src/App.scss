@@ -1,1 +1,8 @@
+@import-normalize;
 @import "~antd/dist/antd.css";
+$secondaryColor: #9F9F9F;
+$secondaryBg: #27273B;
+
+body {
+    overflow-x: hidden;
+}
