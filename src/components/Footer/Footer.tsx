@@ -1,21 +1,20 @@
+import { FC } from "react";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Layout, Row } from "antd";
-import { FC } from "react";
+
+import styles from "./Footer.module.scss";
 
 const Footer: FC = () => {
   return (
-    <Layout.Footer style={{ background: "#27273B", color: "#9F9F9F" }}>
+    <Layout.Footer className={styles.footer}>
       <Row align="middle" justify="center">
         Made with
-        <FontAwesomeIcon
-          icon={faHeart}
-          style={{ color: "#C84E4E", margin: "0 5px" }}
-        />
+        <FontAwesomeIcon icon={faHeart} className={styles.icon} />
         by Metamorphosis
       </Row>
     </Layout.Footer>
   );
 };
 
-export default Footer;
+export { Footer };

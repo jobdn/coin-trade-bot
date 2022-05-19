@@ -3,9 +3,12 @@ import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartSimple, faUser } from "@fortawesome/free-solid-svg-icons";
-import Header from "./Header";
-import Footer from "./Footer";
-import { RouteNames } from "../routes";
+
+import { Header } from "../Header/";
+import { Footer } from "../Footer/";
+import { RouteNames } from "../../routes";
+
+import styles from "./AppLayout.module.scss";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -53,13 +56,13 @@ const AppLayout = () => {
         collapsible
         collapsed={collapsed}
         onCollapse={onCollapse}
-        style={{ background: "#27273B", color: "#9F9F9F" }}
+        className={styles.sider}
       >
         <Menu items={items} theme="dark" />
       </Layout.Sider>
       <Layout>
         <Header />
-        <Layout.Content style={{ backgroundColor: "#1D1B2A" }}>
+        <Layout.Content className={styles.content}>
           <Outlet />
         </Layout.Content>
         <Footer />
@@ -68,4 +71,4 @@ const AppLayout = () => {
   );
 };
 
-export default AppLayout;
+export { AppLayout };

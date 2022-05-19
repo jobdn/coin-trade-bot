@@ -1,0 +1,10 @@
+@import '../../App.scss';
+
+.footer {
+    background-color: $secondaryBg !important;
+    color: $secondaryColor !important;
+    .icon{
+        color: #C84E4E; 
+        margin: 0 5px 
+    }
+}
