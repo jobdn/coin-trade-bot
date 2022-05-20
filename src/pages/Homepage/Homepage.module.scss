@@ -5,9 +5,17 @@
   height: 100%;
   .row {
     min-height: 50%;
-    padding: 10px 20px;
+    padding: 12px 52px;
     .col {
-      background-color: $secondaryBg;
+      padding: 0 8px;
+      .card {
+        height: 100%;
+        background-color: $secondaryBg;
+        & > div {
+          height: 100%;
+          padding: 10px;
+        }
+      }
     }
   }
 }

@@ -44,7 +44,7 @@ const items = [
   ),
 ];
 
-const Ellipse = styled.div`
+const EllipseBg = styled.div`
   position: fixed;
   bottom: 0;
   transform: translateY(50%);
@@ -65,22 +65,22 @@ const AppLayout = () => {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Ellipse />
-      <Layout.Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={onCollapse}
-        className={styles.sider}
-      >
-        <Menu items={items} theme="dark" />
-      </Layout.Sider>
+      <EllipseBg />
+      <Header />
       <Layout>
-        <Header />
+        <Layout.Sider
+          collapsible
+          collapsed={collapsed}
+          onCollapse={onCollapse}
+          className={styles.sider}
+        >
+          <Menu items={items} theme="dark" />
+        </Layout.Sider>
         <Layout.Content className={styles.content}>
           <Outlet />
         </Layout.Content>
-        <Footer />
       </Layout>
+      <Footer />
     </Layout>
   );
 };
