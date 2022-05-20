@@ -5,8 +5,6 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  // PointElement,
-  // LineElement,
   BarElement,
   Title,
   Tooltip,
@@ -29,9 +27,8 @@ const Homepage: FC = () => {
   return (
     <div className={styles.homepage}>
       <Row className={styles.row}>
-        <Col span={24} style={{ overflow: "hidden" }}>
+        <Col span={24} className={styles.col}>
           <Bar
-            style={{ width: "300px !important", height: "400px !important" }}
             options={{ maintainAspectRatio: false }}
             data={{
               labels: [
@@ -61,8 +58,10 @@ const Homepage: FC = () => {
         </Col>
       </Row>
       <Row className={styles.row}>
-        <Col span={12}></Col>
-        <Col span={12}></Col>
+        <Col span={12} className={styles.col}></Col>
+        <Col span={12} className={styles.col}>
+          list
+        </Col>
       </Row>
     </div>
   );

@@ -1,8 +1,13 @@
+@import "../../App.scss";
+
 .homepage {
-    color: #fff;
-    height: 100%;
-    .row{
-        height: 50%;
-        padding: 10px 20px;
+  color: #fff;
+  height: 100%;
+  .row {
+    min-height: 50%;
+    padding: 10px 20px;
+    .col {
+      background-color: $secondaryBg;
     }
+  }
 }
