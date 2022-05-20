@@ -1,12 +1,12 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
-$contentBg: #1D1B2A;
+$contentBg: #1d1b2a;
 
 .content {
-    background-color: $contentBg;
+  background: #1d1b2a;
 }
 
 .sider {
-    background-color: $secondaryBg;
-    color: $secondaryColor;
+  background-color: $secondaryBg;
+  color: $secondaryColor;
 }
