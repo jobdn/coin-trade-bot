@@ -1,10 +1,10 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
 .header {
-    background-color: $secondaryBg;
+  background-color: $secondaryBg;
+  color: $secondaryColor;
+  .title {
+    font-size: 32px;
     color: $secondaryColor;
-    .title {
-        font-size: 32px;
-        color: $secondaryColor;
-    }
+  }
 }
