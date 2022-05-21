@@ -9,6 +9,7 @@ import { Footer } from "../Footer/";
 import { RouteNames } from "../../routes";
 
 import styles from "./AppLayout.module.scss";
+import { FC } from "react";
 
 // TODO: What is it?
 type MenuItem = Required<MenuProps>["items"][number];
@@ -54,25 +55,31 @@ const EllipseBg = styled.div`
   pointer-events: none;
 `;
 
+const Sidebar: FC = () => {
+  return (
+    <Sider
+      width={111}
+      breakpoint="sm"
+      collapsedWidth="0"
+      className={styles.sider}
+    >
+      <Menu
+        items={items}
+        theme="dark"
+        className={styles.menu}
+        selectable={false}
+      />
+    </Sider>
+  );
+};
+
 const AppLayout = () => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <EllipseBg />
       <Header />
       <Layout>
-        <Sider
-          width={111}
-          breakpoint="sm"
-          collapsedWidth="0"
-          className={styles.sider}
-        >
-          <Menu
-            items={items}
-            theme="dark"
-            className={styles.menu}
-            selectable={false}
-          />
-        </Sider>
+        <Sidebar />
         <Layout.Content className={styles.content}>
           <Outlet />
         </Layout.Content>
