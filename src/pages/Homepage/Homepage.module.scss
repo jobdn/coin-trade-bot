@@ -5,12 +5,13 @@
   height: 100%;
   .row {
     min-height: 50%;
-    padding: 12px 52px;
+    padding: 10px 52px;
     .col {
-      padding: 0 8px;
+      padding: 0 10px;
       .card {
         height: 100%;
         background-color: $secondaryBg;
+        padding: 20px 40px;
         & > div {
           height: 100%;
           padding: 10px;

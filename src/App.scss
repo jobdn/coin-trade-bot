@@ -1,7 +1,6 @@
 @import-normalize;
 @import "~antd/dist/antd.css";
-$secondaryColor: #9f9f9f !important;
-$secondaryBg: #27273b !important;
+@import "./variables.scss";
 
 body {
   overflow-x: hidden;

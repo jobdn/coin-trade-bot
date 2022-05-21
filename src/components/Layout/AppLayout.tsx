@@ -26,7 +26,7 @@ const AppLayout: FC = () => {
     <Layout style={{ minHeight: "100vh" }}>
       <EllipseBg />
       <Header />
-      <Layout>
+      <Layout className={styles.layout}>
         <Sidebar />
         <Layout.Content className={styles.content}>
           <Outlet />

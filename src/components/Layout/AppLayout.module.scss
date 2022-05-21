@@ -1,7 +1,11 @@
 @import "../../variables.scss";
 
-$contentBg: #1d1b2a;
+.layout {
+  background: $contentBg !important;
+}
 
 .content {
   background: $contentBg;
+  max-width: 1300px;
+  margin: 0 auto;
 }

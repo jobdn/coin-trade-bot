@@ -51,7 +51,7 @@ const Homepage: FC = () => {
                     label: "Years trades",
                     borderColor: ["rgba(31, 142, 241, 1)"],
                     borderWidth: 3,
-                    maxBarThickness: 55,
+                    maxBarThickness: 100,
                     backgroundColor: ["rgba(31, 136, 231, 0.4)"],
                     data: [10, 20, 59, 90, 87, 45, 37, 29, 94, 77, 34, 33, 88],
                   },

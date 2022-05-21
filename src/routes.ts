@@ -12,6 +12,7 @@ export interface IRoute {
 
 export enum RouteNames {
   HOMEPAGE = "/",
+  LOGIN = "/login",
   USER = "user",
   STATISTICS = "statictics",
   NOT_FOUND = "*",
