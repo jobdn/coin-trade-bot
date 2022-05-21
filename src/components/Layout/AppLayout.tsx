@@ -14,7 +14,6 @@ import styles from "./AppLayout.module.scss";
 type MenuItem = Required<MenuProps>["items"][number];
 
 function getItem(
-  label: React.ReactNode,
   key: React.Key,
   icon?: React.ReactNode,
   children?: MenuItem[]
@@ -23,20 +22,17 @@ function getItem(
     key,
     icon,
     children,
-    label,
   } as MenuItem;
 }
 
 const items = [
   getItem(
-    "User Account",
     1,
     <Link to={`/${RouteNames.USER}`}>
       <FontAwesomeIcon icon={faUser} />
     </Link>
   ),
   getItem(
-    "Statistics",
     2,
     <Link to={`/${RouteNames.STATISTICS}`}>
       <FontAwesomeIcon icon={faChartSimple} />
@@ -57,24 +53,22 @@ const EllipseBg = styled.div`
 `;
 
 const AppLayout = () => {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const onCollapse = (collapsed: boolean) => {
-    setCollapsed(collapsed);
-  };
-
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <EllipseBg />
       <Header />
       <Layout>
         <Layout.Sider
-          collapsible
-          collapsed={collapsed}
-          onCollapse={onCollapse}
+          width={111}
+          breakpoint="sm"
+          collapsedWidth="0"
           className={styles.sider}
         >
-          <Menu items={items} theme="dark" />
+          <Menu
+            items={items}
+            theme="dark"
+            style={{ background: "inherit", paddingTop: "50px" }}
+          />
         </Layout.Sider>
         <Layout.Content className={styles.content}>
           <Outlet />
