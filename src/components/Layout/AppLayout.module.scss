@@ -10,3 +10,21 @@ $contentBg: #1d1b2a;
   background-color: $secondaryBg;
   color: $secondaryColor;
 }
+
+.menu {
+  background: inherit !important;
+  padding-top: 40px !important;
+  li {
+    margin-bottom: 40px !important;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 40px;
+}

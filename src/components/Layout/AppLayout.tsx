@@ -1,6 +1,5 @@
 import { Layout, Menu, MenuProps } from "antd";
 import { Link, Outlet } from "react-router-dom";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartSimple, faUser } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
@@ -11,7 +10,10 @@ import { RouteNames } from "../../routes";
 
 import styles from "./AppLayout.module.scss";
 
+// TODO: What is it?
 type MenuItem = Required<MenuProps>["items"][number];
+
+const { Sider } = Layout;
 
 function getItem(
   key: React.Key,
@@ -28,14 +30,14 @@ function getItem(
 const items = [
   getItem(
     1,
-    <Link to={`/${RouteNames.USER}`}>
-      <FontAwesomeIcon icon={faUser} />
+    <Link to={`/${RouteNames.USER}`} className={styles.link}>
+      <FontAwesomeIcon icon={faUser} className={styles.icon} />
     </Link>
   ),
   getItem(
     2,
-    <Link to={`/${RouteNames.STATISTICS}`}>
-      <FontAwesomeIcon icon={faChartSimple} />
+    <Link to={`/${RouteNames.STATISTICS}`} className={styles.link}>
+      <FontAwesomeIcon icon={faChartSimple} className={styles.icon} />
     </Link>
   ),
 ];
@@ -58,7 +60,7 @@ const AppLayout = () => {
       <EllipseBg />
       <Header />
       <Layout>
-        <Layout.Sider
+        <Sider
           width={111}
           breakpoint="sm"
           collapsedWidth="0"
@@ -67,9 +69,10 @@ const AppLayout = () => {
           <Menu
             items={items}
             theme="dark"
-            style={{ background: "inherit", paddingTop: "50px" }}
+            className={styles.menu}
+            selectable={false}
           />
-        </Layout.Sider>
+        </Sider>
         <Layout.Content className={styles.content}>
           <Outlet />
         </Layout.Content>
