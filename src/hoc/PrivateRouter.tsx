@@ -2,7 +2,7 @@ import { useLocation, Navigate } from "react-router-dom";
 import { RouteNames } from "../routes";
 
 const PrivateRouter = ({ children }: { children: JSX.Element }) => {
-  const auth = true;
+  const auth = false;
   const location = useLocation();
   console.log(location);
 
