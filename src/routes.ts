@@ -1,4 +1,5 @@
-import { Homepage } from "./pages/Homepage";
+import { Dashboard } from "./pages/Dashboard";
+import { Login } from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Statistics from "./pages/Statistics";
 import User from "./pages/User";
@@ -11,15 +12,20 @@ export interface IRoute {
 }
 
 export enum RouteNames {
-  HOMEPAGE = "/",
   LOGIN = "/login",
-  USER = "user",
-  STATISTICS = "statictics",
+  DASHBOARD = "/",
+  USER = "/user",
+  STATISTICS = "/statictics",
   NOT_FOUND = "*",
 }
 
-export const routes: IRoute[] = [
-  { path: RouteNames.HOMEPAGE, index: true, element: Homepage },
+export const publicRoutes: IRoute[] = [
+  { path: RouteNames.DASHBOARD, element: Dashboard },
+  { path: RouteNames.LOGIN, index: true, element: Login },
+  { path: RouteNames.NOT_FOUND, element: NotFound },
+];
+
+export const privateRoutes: IRoute[] = [
   {
     path: RouteNames.USER,
     element: User,
@@ -27,9 +33,5 @@ export const routes: IRoute[] = [
   {
     path: RouteNames.STATISTICS,
     element: Statistics,
-  },
-  {
-    path: RouteNames.NOT_FOUND,
-    element: NotFound,
   },
 ];

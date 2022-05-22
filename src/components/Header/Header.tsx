@@ -7,7 +7,7 @@ import styles from "./Header.module.scss";
 const Header: FC = () => {
   return (
     <Layout.Header className={styles.header}>
-      <Link to={RouteNames.HOMEPAGE} className={styles.title}>
+      <Link to={RouteNames.DASHBOARD} className={styles.title}>
         Coin Trade Bot
       </Link>
     </Layout.Header>

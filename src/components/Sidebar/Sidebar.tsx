@@ -27,13 +27,13 @@ function getItem(
 const items = [
   getItem(
     1,
-    <Link to={`/${RouteNames.USER}`} className={styles.link}>
+    <Link to={RouteNames.USER} className={styles.link}>
       <FontAwesomeIcon icon={faUser} className={styles.icon} />
     </Link>
   ),
   getItem(
     2,
-    <Link to={`/${RouteNames.STATISTICS}`} className={styles.link}>
+    <Link to={RouteNames.STATISTICS} className={styles.link}>
       <FontAwesomeIcon icon={faChartSimple} className={styles.icon} />
     </Link>
   ),

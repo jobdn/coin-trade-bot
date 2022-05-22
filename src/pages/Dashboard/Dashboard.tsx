@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Bar } from "react-chartjs-2";
 
 import {
@@ -12,7 +12,7 @@ import {
 } from "chart.js";
 import { Card, Col, Row } from "antd";
 
-import styles from "./Homepage.module.scss";
+import styles from "./Dashboard.module.scss";
 
 ChartJS.register(
   CategoryScale,
@@ -23,9 +23,9 @@ ChartJS.register(
   Legend
 );
 
-const Homepage: FC = () => {
+const Dashboard: FC = () => {
   return (
-    <div className={styles.homepage}>
+    <div className={styles.dashboard}>
       <Row className={styles.row}>
         <Col span={24} className={styles.col}>
           <Card bordered={false} className={styles.card}>
@@ -77,4 +77,4 @@ const Homepage: FC = () => {
   );
 };
 
-export { Homepage };
+export { Dashboard };
