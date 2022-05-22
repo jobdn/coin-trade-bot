@@ -1,11 +1,10 @@
 @import "../../variables.scss";
 
 .layout {
-  background: $contentBg !important;
+  background: $primaryBg;
 }
 
 .content {
-  background: $contentBg;
   max-width: 1300px;
   margin: 0 auto;
 }

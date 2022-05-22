@@ -5,13 +5,13 @@
   height: 100%;
   text-align: center;
   .title {
-    color: #d9d9d9;
+    color: $primaryColor;
     font-size: 64px;
     margin: 20px 0 170px;
     display: block;
   }
   .subTitle {
-    color: #d9d9d9;
+    color: $primaryColor;
     font-size: 36px;
   }
 }
@@ -22,11 +22,12 @@
   overflow: hidden;
   background: none !important;
   padding: 10px 20px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid $primaryColor;
+  border-top: none !important;
   border-top: none;
   cursor: pointer;
   font-size: 1.5em;
-  color: #d9d9d9;
+  color: $primaryColor;
   -webkit-transition: all 0.15s 0s ease-in-out;
   -moz-transition: all 0.15s 0s ease-in-out;
   -o-transition: all 0.15s 0s ease-in-out;
