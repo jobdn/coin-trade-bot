@@ -1,15 +1,14 @@
 import { useLocation, Navigate } from "react-router-dom";
+import { useTypedSelector } from "../hook/redux";
 import { RouteNames } from "../routes";
 
 const PrivateRouter = ({ children }: { children: JSX.Element }) => {
-  const auth = false;
+  const { isAuth } = useTypedSelector((state) => state.auth);
   const location = useLocation();
-  console.log(location);
+  const state = { from: location };
 
-  if (!auth) {
-    return (
-      <Navigate to={RouteNames.LOGIN} state={{ from: location }} replace />
-    );
+  if (!isAuth) {
+    return <Navigate to={RouteNames.LOGIN} state={state} replace />;
   }
 
   return children;
