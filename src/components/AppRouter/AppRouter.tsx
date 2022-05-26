@@ -1,8 +1,7 @@
-import React from "react";
 import { FC } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import PrivateRouter from "../../hoc/PrivateRouter";
-import { privateRoutes, publicRoutes, RouteNames } from "../../routes";
+import { privateRoutes, publicRoutes } from "../../routes";
 import { AppLayout } from "../Layout";
 
 const AppRouter: FC = () => {

@@ -1,8 +1,13 @@
+import { FC } from "react";
 import { useLocation, Navigate } from "react-router-dom";
 import { useTypedSelector } from "../hook/redux";
 import { RouteNames } from "../routes";
 
-const PrivateRouter = ({ children }: { children: JSX.Element }) => {
+interface PrivateRouterProps {
+  children: JSX.Element;
+}
+
+const PrivateRouter: FC<PrivateRouterProps> = ({ children }) => {
   const { isAuth } = useTypedSelector((state) => state.auth);
   const location = useLocation();
   const state = { from: location };

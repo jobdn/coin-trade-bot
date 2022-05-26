@@ -1,11 +1,17 @@
-import { Button, Col, Row, Typography } from "antd";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../hook/redux";
-import { setIsLoading, successAuth } from "../../store/reducers/auth";
+import { Button, Col, Row, Typography } from "antd";
+
+import { useAppDispatch, useTypedSelector } from "../../hook/redux";
+import { authActionCreator } from "../../store/reducers/auth/authActionCreator";
+
 import styles from "./Login.module.scss";
+import { Error } from "../../components/Error";
+import { Spinner } from "../../components/Spinner";
+import { resetAll } from "../../store/reducers/auth";
 
 const Login: FC = () => {
+  const { error, isLoading } = useTypedSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useAppDispatch();
@@ -13,20 +19,23 @@ const Login: FC = () => {
   // TODO: how to avoid this converting
   pageFrom = (location.state as any).from.pathname;
 
-  const onConnectWallet: React.MouseEventHandler<HTMLElement> = () => {
-    // TODO: delete this
-    dispatch(setIsLoading(true));
+  useEffect(() => {
+    dispatch(resetAll());
+  }, [dispatch]);
 
-    setTimeout(() => {
-      dispatch(successAuth("User"));
-      dispatch(setIsLoading(false));
-      navigate(pageFrom, { replace: true });
-    }, 3000);
+  const loginCallback = () => navigate(pageFrom, { replace: true });
+
+  const onConnectWallet: React.MouseEventHandler<HTMLElement> = () => {
+    dispatch(authActionCreator(loginCallback));
   };
+
+  if (isLoading) return <Spinner />;
+  if (error) return <Error message={error} savingLink="/" savingTitle="home" />;
 
   return (
     <Row justify="center" className={styles.loginRow}>
       <Col>
+        {/* TODO: Make these if statemets to && statements */}
         <Typography.Text className={styles.subTitle}>Dashboard</Typography.Text>
         <Typography.Text className={styles.title}>
           Coin Trade Bot
