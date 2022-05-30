@@ -9,6 +9,7 @@ interface PrivateRouterProps {
 
 const PrivateRouter: FC<PrivateRouterProps> = ({ children }) => {
   const { isAuth } = useTypedSelector((state) => state.auth);
+
   const location = useLocation();
   const state = { from: location };
 
