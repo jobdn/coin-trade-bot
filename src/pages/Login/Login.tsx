@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Col, Row, Typography } from "antd";
 
@@ -11,6 +11,7 @@ import {
 import styles from "./Login.module.scss";
 import { Error } from "../../components/Error";
 import { Spinner } from "../../components/Spinner";
+import { setError } from "../../store/reducers/auth";
 
 const Login: FC = () => {
   const { error, isLoading } = useTypedSelector((state) => state.auth);
@@ -24,6 +25,13 @@ const Login: FC = () => {
   const loginCallback = () => {
     navigate(pageFrom, { replace: true });
   };
+
+  useEffect(() => {
+    const cleanError = () => {
+      dispatch(setError(""));
+    };
+    return cleanError;
+  }, []);
 
   const onConnectWallet: React.MouseEventHandler<HTMLElement> = () => {
     dispatch(
