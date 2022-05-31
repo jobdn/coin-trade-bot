@@ -18,4 +18,4 @@ const User: FC = () => {
   );
 };
 
-export default User;
+export { User };

@@ -1,8 +1,8 @@
 import { Dashboard } from "./pages/Dashboard";
 import { Login } from "./pages/Login";
-import NotFound from "./pages/NotFound";
-import Statistics from "./pages/Statistics";
-import User from "./pages/User";
+import { NotFound } from "./pages/NotFound";
+import { Statistics } from "./pages/Statistics";
+import { User } from "./pages/User";
 
 export interface IRoute {
   path: string;

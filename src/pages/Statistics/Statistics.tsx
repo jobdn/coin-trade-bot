@@ -18,4 +18,4 @@ const Statistics: FC = () => {
   );
 };
 
-export default Statistics;
+export { Statistics };
