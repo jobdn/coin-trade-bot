@@ -1,4 +1,8 @@
-import { faChartSimple, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChartSimple,
+  faUser,
+  faUserPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Layout, Menu, MenuProps } from "antd";
 import { FC } from "react";
@@ -35,6 +39,12 @@ const items = [
     2,
     <Link to={RouteNames.STATISTICS} className={styles.link}>
       <FontAwesomeIcon icon={faChartSimple} className={styles.icon} />
+    </Link>
+  ),
+  getItem(
+    3,
+    <Link to={RouteNames.USER_PLUS} className={styles.link}>
+      <FontAwesomeIcon icon={faUserPlus} className={styles.userPlus} />
     </Link>
   ),
 ];
