@@ -15,6 +15,7 @@ export enum RouteNames {
   LOGIN = "/login",
   DASHBOARD = "/",
   USER = "/user",
+  USER_PLUS = "/user-plus",
   STATISTICS = "/statictics",
   NOT_FOUND = "*",
 }

@@ -9,6 +9,7 @@ import {
 } from "../../store/reducers/auth/authActionCreator";
 
 import styles from "./Login.module.scss";
+import { LocationState } from "../../models/LocationState";
 import { Error } from "../../components/Error";
 import { Spinner } from "../../components/Spinner";
 import { setError } from "../../store/reducers/auth";
@@ -18,12 +19,10 @@ const Login: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useAppDispatch();
-  let pageFrom: string = "/";
-  // TODO: how to avoid this converting
-  pageFrom = (location.state as any).from.pathname;
+  const { from } = location.state as LocationState;
 
   const loginCallback = () => {
-    navigate(pageFrom, { replace: true });
+    navigate(from.pathname, { replace: true });
   };
 
   useEffect(() => {
