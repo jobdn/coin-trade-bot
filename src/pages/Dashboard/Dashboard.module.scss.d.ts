@@ -1,4 +1,12 @@
-export const card: string;
-export const col: string;
-export const dashboard: string;
-export const row: string;
+export type Styles = {
+  'card': string;
+  'col': string;
+  'dashboard': string;
+  'row': string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;

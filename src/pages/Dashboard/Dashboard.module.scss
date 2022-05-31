@@ -1,21 +1,22 @@
-@import "../../variables.scss";
+@import "../../styles/variables.scss";
 
 .dashboard {
-  color: #fff;
   height: 100%;
+  padding: 10px 0;
   .row {
-    min-height: 50%;
+    &:first-child {
+      height: 40%;
+    }
+    &:nth-child(2) {
+      height: 60%;
+    }
     padding: 10px 52px;
     .col {
       padding: 0 10px;
       .card {
         height: 100%;
         background-color: $secondaryBg;
-        padding: 20px 40px;
-        & > div {
-          height: 100%;
-          padding: 10px;
-        }
+        padding: 0 40px;
       }
     }
   }

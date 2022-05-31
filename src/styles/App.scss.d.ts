@@ -1,6 +1,5 @@
 export type Styles = {
-  'content': string;
-  'layout': string;
+  'ant-card-body': string;
 };
 
 export type ClassNames = keyof Styles;

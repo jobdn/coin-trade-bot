@@ -44,7 +44,7 @@ const items = [
   getItem(
     3,
     <Link to={RouteNames.USER_PLUS} className={styles.link}>
-      <FontAwesomeIcon icon={faUserPlus} className={styles.userPlus} />
+      <FontAwesomeIcon icon={faUserPlus} className={styles["user-plus"]} />
     </Link>
   ),
 ];
@@ -60,7 +60,7 @@ const Sidebar: FC = () => {
       <Menu
         items={items}
         theme="dark"
-        className={styles.menu}
+        className={styles["sider-menu"]}
         selectable={false}
       />
     </Sider>

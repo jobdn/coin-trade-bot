@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./App.scss";
+import "./styles/App.scss";
 import { AppRouter } from "./components/AppRouter";
 import { useAppDispatch } from "./hook/redux";
 import {

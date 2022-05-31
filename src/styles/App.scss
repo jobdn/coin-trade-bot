@@ -7,3 +7,9 @@ body {
   overflow-x: hidden;
   font-family: "Cousine", monospace !important;
 }
+
+// TODO: Should I change the .module.scss to just .scss ?
+.ant-card-body {
+  height: 100%;
+  padding: 10px;
+}
