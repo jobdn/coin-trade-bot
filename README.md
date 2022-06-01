@@ -6,5 +6,5 @@
 npx typed-scss-modules src
 
 // to generate d.ts file automatically
-npm typed-scss-modules src --w
+npx typed-scss-modules src --w -n param --exportType default
 ```

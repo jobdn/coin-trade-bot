@@ -13,6 +13,8 @@ import {
 import { Card, Col, Row } from "antd";
 
 import styles from "./Dashboard.module.scss";
+import { OrderHistory } from "../../components/OrderHistory";
+import { Fee } from "../../components/Fee";
 
 ChartJS.register(
   CategoryScale,
@@ -64,12 +66,12 @@ const Dashboard: FC = () => {
       <Row className={styles.row} justify="space-between">
         <Col span={12} className={styles.col}>
           <Card bordered={false} className={styles.card}>
-            test 1
+            <Fee />
           </Card>
         </Col>
         <Col span={12} className={styles.col}>
           <Card bordered={false} className={styles.card}>
-            test 2
+            <OrderHistory />
           </Card>
         </Col>
       </Row>
