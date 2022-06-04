@@ -30,7 +30,7 @@ const Login: FC = () => {
       dispatch(setError(""));
     };
     return cleanError;
-  }, []);
+  }, [dispatch]);
 
   const onConnectWallet: React.MouseEventHandler<HTMLElement> = () => {
     dispatch(

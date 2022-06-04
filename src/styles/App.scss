@@ -13,3 +13,9 @@ body {
   height: 100%;
   padding: 10px;
 }
+
+.ant-typography {
+  @media screen and (max-width: 1024px) {
+    font-size: 20px !important;
+  }
+}

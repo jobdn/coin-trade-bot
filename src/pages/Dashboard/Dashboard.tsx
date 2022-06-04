@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React from "react";
 import { Bar } from "react-chartjs-2";
 
 import {
@@ -13,7 +13,7 @@ import {
 import { Card, Col, Row } from "antd";
 
 import styles from "./Dashboard.module.scss";
-import { OrderHistory } from "../../components/OrderHistory";
+import { CurrenciesContainer } from "../../components/CurrenciesContainer";
 import { Fee } from "../../components/Fee";
 
 ChartJS.register(
@@ -25,7 +25,22 @@ ChartJS.register(
   Legend
 );
 
-const Dashboard: FC = () => {
+const Dashboard: React.FC = () => {
+  const [isModile, setIsMobile] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (document.documentElement.clientWidth < 769) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isModile]);
+
   return (
     <div className={styles.dashboard}>
       <Row className={styles.row}>
@@ -64,14 +79,14 @@ const Dashboard: FC = () => {
         </Col>
       </Row>
       <Row className={styles.row} justify="space-between">
-        <Col span={12} className={styles.col}>
+        <Col span={isModile ? 24 : 12} className={styles.col}>
           <Card bordered={false} className={styles.card}>
             <Fee />
           </Card>
         </Col>
-        <Col span={12} className={styles.col}>
+        <Col span={isModile ? 24 : 12} className={styles.col}>
           <Card bordered={false} className={styles.card}>
-            <OrderHistory />
+            <CurrenciesContainer />
           </Card>
         </Col>
       </Row>

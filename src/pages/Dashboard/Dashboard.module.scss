@@ -4,6 +4,12 @@
   height: 100%;
   padding: 10px 0;
   .row {
+    @media screen and (max-width: 768px) {
+      padding: 0 35px;
+    }
+    @media screen and (max-width: 425px) {
+      padding: 0 5px;
+    }
     &:first-child {
       height: 40%;
     }
@@ -12,8 +18,18 @@
     }
     padding: 10px 52px;
     .col {
+      @media screen and (max-width: 768px) {
+        margin-top: 20px;
+        padding: 0;
+      }
       padding: 0 10px;
       .card {
+        @media screen and (max-width: 768px) {
+          padding: 0;
+        }
+        @media screen and (max-width: 425px) {
+          border-radius: 10px;
+        }
         height: 100%;
         background-color: $secondaryBg;
         padding: 0 40px;
