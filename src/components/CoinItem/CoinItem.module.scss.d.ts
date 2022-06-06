@@ -1,5 +1,6 @@
 export type Styles = {
-  'coins-title': string;
+  'coin-item': string;
+  'coin-item-col': string;
 };
 
 export type ClassNames = keyof Styles;

@@ -6,31 +6,3 @@
     color: $secondaryColor;
   }
 }
-
-// COIN LIST
-.coin-list {
-  width: 100%;
-  height: 346px;
-  overflow-y: scroll;
-  &-title {
-    text-transform: uppercase;
-    font-weight: 800;
-  }
-}
-
-// COIN ITEM
-.coin-item,
-.coin-list-title {
-  width: 100%;
-  color: $primaryColor;
-  border-bottom: 2px solid $primaryColor;
-  padding: 10px 20px;
-  margin-bottom: 5px;
-  &:first-child {
-    margin-top: 5px;
-  }
-  &-col {
-    display: flex;
-    align-items: center;
-  }
-}

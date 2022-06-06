@@ -38,7 +38,7 @@ const Login: FC = () => {
     );
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <Spinner message="Page is loading..." />;
   if (error) return <Error message={error} savingLink="/" savingTitle="home" />;
 
   return (

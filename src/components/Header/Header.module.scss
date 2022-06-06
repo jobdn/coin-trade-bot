@@ -3,8 +3,12 @@
 .header {
   background-color: $secondaryBg;
   .title {
-    font-size: 32px;
     color: $primaryColor;
+    font-size: 32px;
+    font-weight: 800;
+    @media screen and (max-width: 425px) {
+      font-size: 20px;
+    }
   }
   .address {
     color: #fff;

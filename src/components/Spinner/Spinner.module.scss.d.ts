@@ -2,7 +2,7 @@ export type Styles = {
   'col': string;
   'row': string;
   'spinner': string;
-  'undertitle': string;
+  'under-title': string;
 };
 
 export type ClassNames = keyof Styles;

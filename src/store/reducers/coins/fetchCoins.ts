@@ -30,7 +30,9 @@ export const fetchCoins = (search: string) => async (dispatch: AppDispatch) => {
         await axios.get(QUERY_URL + search);
 
       const searchedIds = searchRes.coins
-        .filter((coin) => coin.id.toLocaleLowerCase().startsWith(search))
+        .filter((coin) =>
+          coin.id.toLowerCase().startsWith(search.toLowerCase())
+        )
         .reduce((acc, currentCoin) => acc + currentCoin.id + ",", "")
         .slice(0, -1);
 
