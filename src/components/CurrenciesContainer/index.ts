@@ -1,1 +1,0 @@
-export { CurrenciesContainer } from "./CurrenciesContainer";

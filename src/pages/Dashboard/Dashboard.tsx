@@ -2,9 +2,9 @@ import React from "react";
 import { Card, Col, Row } from "antd";
 
 import styles from "./Dashboard.module.scss";
-import { CurrenciesContainer } from "../../components/CurrenciesContainer";
 import { Fee } from "../../components/Fee";
 import { Chart } from "../../components/Chart";
+import { Coins } from "../../components/Coins";
 
 const Dashboard: React.FC = () => {
   const [isModile, setIsMobile] = React.useState<boolean>(false);
@@ -39,7 +39,7 @@ const Dashboard: React.FC = () => {
         </Col>
         <Col span={isModile ? 24 : 12} className={styles.col}>
           <Card bordered={false} className={styles.card}>
-            <CurrenciesContainer />
+            <Coins />
           </Card>
         </Col>
       </Row>

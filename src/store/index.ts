@@ -2,11 +2,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 
 import authReducer from "./reducers/auth";
-import currenciesReducer from "./reducers/currencies";
+import coinsReducer from "./reducers/coins";
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  currencies: currenciesReducer,
+  coins: coinsReducer,
 });
 
 export const store = configureStore({ reducer: rootReducer });
