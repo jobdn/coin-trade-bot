@@ -11,7 +11,7 @@ const Dashboard: React.FC = () => {
 
   React.useEffect(() => {
     const handleResize = () => {
-      if (document.documentElement.clientWidth < 769) {
+      if (document.documentElement.clientWidth < 1024) {
         setIsMobile(true);
       } else {
         setIsMobile(false);

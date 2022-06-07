@@ -6,9 +6,10 @@ import { CoinItem } from "../CoinItem";
 import { useTypedSelector } from "../../hook/redux";
 
 import styles from "./CoinList.module.scss";
+import { CoinSkeleton } from "../CoinSkeleton";
 
 export const CoinList: React.FC = () => {
-  const { coins } = useTypedSelector((state) => state.coins);
+  const { coins, isLoading } = useTypedSelector((state) => state.coins);
   return (
     <div className={styles["coin-list"]}>
       {coins.length > 0 ? (
@@ -19,9 +20,13 @@ export const CoinList: React.FC = () => {
             <Col span={8}>Name</Col>
             <Col span={8}>Price usd</Col>
           </Row>
-          {coins.map((coin) => (
-            <CoinItem {...coin} key={coin.id} />
-          ))}
+          {coins.map((coin) => {
+            return isLoading ? (
+              <CoinSkeleton key={coin.id} />
+            ) : (
+              <CoinItem {...coin} key={coin.id} />
+            );
+          })}
         </>
       ) : (
         <div className={styles["not-found"]}>
