@@ -19,15 +19,12 @@ export const authActionCreator =
         const accounts = await (provider as any).request({
           method,
         });
-
         if (accounts.length) {
           dispatch(successAuth(accounts[0]));
         }
-
         if (cb) {
           cb();
         }
-
         dispatch(setIsLoading(false));
       } catch (e) {
         dispatch(errorAuth((e as ProviderRpcError).message));

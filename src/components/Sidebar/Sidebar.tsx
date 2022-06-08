@@ -2,6 +2,7 @@ import {
   faChartSimple,
   faUser,
   faUserPlus,
+  faClipboardList,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Layout, Menu, MenuProps } from "antd";
@@ -45,6 +46,12 @@ const items = [
     3,
     <Link to={RouteNames.USER_PLUS} className={styles.link}>
       <FontAwesomeIcon icon={faUserPlus} className={styles["user-plus"]} />
+    </Link>
+  ),
+  getItem(
+    4,
+    <Link to={RouteNames.PROPOSALS} className={styles.link}>
+      <FontAwesomeIcon icon={faClipboardList} className={styles.icon} />
     </Link>
   ),
 ];

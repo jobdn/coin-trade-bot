@@ -1,6 +1,7 @@
 import { Dashboard } from "./pages/Dashboard";
 import { Login } from "./pages/Login";
 import { NotFound } from "./pages/NotFound";
+import { Proposals } from "./pages/Proposals";
 import { Statistics } from "./pages/Statistics";
 import { User } from "./pages/User";
 
@@ -17,13 +18,15 @@ export enum RouteNames {
   USER = "/user",
   USER_PLUS = "/user-plus",
   STATISTICS = "/statictics",
+  PROPOSALS = "/proposals",
   NOT_FOUND = "*",
 }
 
 export const publicRoutes: IRoute[] = [
-  { path: RouteNames.DASHBOARD, element: Dashboard },
-  { path: RouteNames.LOGIN, index: true, element: Login },
+  { path: RouteNames.DASHBOARD, index: true, element: Dashboard },
+  { path: RouteNames.LOGIN, element: Login },
   { path: RouteNames.NOT_FOUND, element: NotFound },
+  { path: RouteNames.PROPOSALS, element: Proposals },
 ];
 
 export const privateRoutes: IRoute[] = [
