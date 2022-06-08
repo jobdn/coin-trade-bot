@@ -44,8 +44,8 @@ const items = [
   ),
   getItem(
     3,
-    <Link to={RouteNames.USER_PLUS} className={styles.link}>
-      <FontAwesomeIcon icon={faUserPlus} className={styles["user-plus"]} />
+    <Link to={RouteNames.ADMIN} className={styles.link}>
+      <FontAwesomeIcon icon={faUserPlus} className={styles.admin} />
     </Link>
   ),
   getItem(

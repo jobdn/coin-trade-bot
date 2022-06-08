@@ -1,3 +1,4 @@
+import { Admin } from "./components/Admin";
 import { Dashboard } from "./pages/Dashboard";
 import { Login } from "./pages/Login";
 import { NotFound } from "./pages/NotFound";
@@ -16,7 +17,7 @@ export enum RouteNames {
   LOGIN = "/login",
   DASHBOARD = "/",
   USER = "/user",
-  USER_PLUS = "/user-plus",
+  ADMIN = "/admin",
   STATISTICS = "/statictics",
   PROPOSALS = "/proposals",
   NOT_FOUND = "*",
@@ -37,5 +38,9 @@ export const privateRoutes: IRoute[] = [
   {
     path: RouteNames.STATISTICS,
     element: Statistics,
+  },
+  {
+    path: RouteNames.ADMIN,
+    element: Admin,
   },
 ];
