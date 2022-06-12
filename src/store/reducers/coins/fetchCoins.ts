@@ -33,8 +33,8 @@ export const fetchCoins = (search: string) => async (dispatch: AppDispatch) => {
         .filter((coin) =>
           coin.id.toLowerCase().startsWith(search.toLowerCase())
         )
-        .reduce((acc, currentCoin) => acc + currentCoin.id + ",", "")
-        .slice(0, -1);
+        .map((coin) => coin.id)
+        .join(",");
 
       if (searchedIds.length > 0) {
         const { data: searchedCoins }: AxiosResponse<ICoin[]> = await axios.get(
