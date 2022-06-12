@@ -29,7 +29,7 @@ function getItem(
   } as MenuItem;
 }
 
-const items = [
+const userItems = [
   getItem(
     1,
     <Link to={RouteNames.USER} className={styles.link}>
@@ -43,12 +43,6 @@ const items = [
     </Link>
   ),
   getItem(
-    3,
-    <Link to={RouteNames.ADMIN} className={styles.link}>
-      <FontAwesomeIcon icon={faUserPlus} className={styles.admin} />
-    </Link>
-  ),
-  getItem(
     4,
     <Link to={RouteNames.PROPOSALS} className={styles.link}>
       <FontAwesomeIcon icon={faClipboardList} className={styles.icon} />
@@ -56,11 +50,22 @@ const items = [
   ),
 ];
 
+const adminItems = [
+  getItem(
+    3,
+    <Link to={RouteNames.ADMIN} className={styles.link}>
+      <FontAwesomeIcon icon={faUserPlus} className={styles.admin} />
+    </Link>
+  ),
+];
+
+const items = [...userItems, ...adminItems];
+
 const Sidebar: FC = () => {
   return (
     <Sider
-      width={111}
-      breakpoint="sm"
+      width={90}
+      breakpoint="xs"
       collapsedWidth="0"
       className={styles.sider}
     >
