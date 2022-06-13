@@ -22,9 +22,12 @@
     }
     padding: 10px 52px;
     .col {
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         margin-top: 20px;
         padding: 0;
+        &:nth-child(2) {
+          margin-bottom: 10px;
+        }
       }
       padding: 0 10px;
       .card {
