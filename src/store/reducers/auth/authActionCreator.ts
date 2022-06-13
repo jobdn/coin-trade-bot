@@ -1,12 +1,14 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import { ProviderRpcError } from "hardhat/types";
-import { errorAuth, setIsLoading, successAuth } from ".";
+import { errorAuth, setAdmin, setIsLoading, successAuth } from ".";
 import { AppDispatch } from "../..";
 
 export enum MetamaskRequests {
   ETH_REQUEST_ACCOUNTS = "eth_requestAccounts",
   ETH_ACCOUNTS = "eth_accounts",
 }
+
+const adminAddresses: string[] = ["0x16aae6727ec132b428af83ed7347529529fb6163"];
 
 export const authActionCreator =
   (method: MetamaskRequests, cb?: () => void) =>
@@ -21,6 +23,9 @@ export const authActionCreator =
         });
         if (accounts.length) {
           dispatch(successAuth(accounts[0]));
+          if (adminAddresses.indexOf(accounts[0]) > -1) {
+            dispatch(setAdmin(true));
+          }
         }
         if (cb) {
           cb();

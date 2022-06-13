@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface IAuthState {
   user: string;
   isAuth: boolean;
+  isAdmin: boolean;
   error: string | null;
   isLoading: boolean;
 }
@@ -10,6 +11,7 @@ interface IAuthState {
 const initialState: IAuthState = {
   user: "",
   isAuth: false,
+  isAdmin: false,
   isLoading: false,
   error: null,
 };
@@ -33,9 +35,12 @@ const authSlice = createSlice({
     setError(state, action: PayloadAction<string>) {
       state.error = action.payload;
     },
+    setAdmin(state, action: PayloadAction<boolean>) {
+      state.isAdmin = action.payload;
+    },
   },
 });
 
-export const { errorAuth, setIsLoading, setError, successAuth } =
+export const { errorAuth, setIsLoading, setError, successAuth, setAdmin } =
   authSlice.actions;
 export default authSlice.reducer;

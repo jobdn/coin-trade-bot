@@ -6,8 +6,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Layout, Menu, MenuProps } from "antd";
-import { FC } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useTypedSelector } from "../../hook/redux";
 import { RouteNames } from "../../routes";
 
 import styles from "./Sidebar.module.scss";
@@ -59,9 +60,14 @@ const adminItems = [
   ),
 ];
 
-const items = [...userItems, ...adminItems];
+const Sidebar: React.FC = () => {
+  const itemsRef = React.useRef<MenuItem[]>(userItems);
+  const { isAdmin } = useTypedSelector((state) => state.auth);
 
-const Sidebar: FC = () => {
+  React.useEffect(() => {
+    itemsRef.current = isAdmin ? [...userItems, ...adminItems] : userItems;
+  }, [isAdmin]);
+
   return (
     <Sider
       width={90}
@@ -70,7 +76,7 @@ const Sidebar: FC = () => {
       className={styles.sider}
     >
       <Menu
-        items={items}
+        items={itemsRef.current}
         theme="dark"
         className={styles["sider-menu"]}
         selectable={false}

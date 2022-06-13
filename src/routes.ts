@@ -1,4 +1,4 @@
-import { Admin } from "./components/Admin";
+import { Admin } from "./pages/Admin";
 import { Dashboard } from "./pages/Dashboard";
 import { Login } from "./pages/Login";
 import { NotFound } from "./pages/NotFound";
