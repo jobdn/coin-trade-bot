@@ -25,7 +25,6 @@ const StyledUserList = styled.div`
 `;
 
 export const UserList: React.FC = () => {
-  // TODO: check the render and should i use the useMemo?
   const { users } = useTypedSelector((state) => state.users);
   return (
     <StyledUserList>
