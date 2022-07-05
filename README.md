@@ -1,10 +1,31 @@
 # Coin Trade Bot
 
-## Command to create scss modules
+<p align="center">
+    <img src="https://i.ibb.co/2d4mk63/trading.png" width="300">
+</p>
 
-```shell
-npx typed-scss-modules src
+<p align="center">
+   <img src="https://img.shields.io/badge/React-18.2.0-blue" alt="React Version">
+   <img src="https://img.shields.io/badge/Version-v1.0(Alpha)-blueviolet" alt="Version">
+</p>
 
-// to generate d.ts file automatically
-npx typed-scss-modules src --w -n param --exportType default
-```
+## Stack:
+
+1. React;
+2. Typescript;
+3. chart.js
+4. Sass;
+5. Styled-components;
+6. Antd.
+
+## About
+
+A platform for interacting with cryptocurrency.
+
+## Distribute
+
+- [trade-bot](https://coin-trade-bot.vercel.app/)
+
+## Developers
+
+- [Pisarev Danila](https://github.com/jobdn)
