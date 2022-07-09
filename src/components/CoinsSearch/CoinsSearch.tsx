@@ -8,7 +8,6 @@ export const CoinsSearch: React.FC = () => {
   const dispatch = useAppDispatch();
   const { search } = useTypedSelector((state) => state.coins);
 
-  // TODO: Should I make request every time when user type
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
   ) => {
@@ -16,8 +15,11 @@ export const CoinsSearch: React.FC = () => {
   };
 
   React.useEffect(() => {
-    dispatch(fetchCoins(search));
-  }, [search, dispatch]);
+    const fetchCoinsId = setTimeout(() => {
+      dispatch(fetchCoins(search));
+    }, 1000);
+    return () => clearTimeout(fetchCoinsId);
+  }, [search]);
 
   return (
     <Input
