@@ -7,7 +7,7 @@ import { UserListTitle } from "../UserListTitle";
 
 const UserListCointainer = styled.div`
   margin-top: 46px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 650px;
 `;

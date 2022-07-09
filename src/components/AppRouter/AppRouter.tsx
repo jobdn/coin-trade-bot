@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import PrivateRouter from "../../hoc/PrivateRouter";
 import { privateRoutes, publicRoutes } from "../../routes";
-import { AppLayout } from "../Layout";
+import { AppLayout } from "../AppLayout";
 
 const AppRouter: FC = () => {
   return (

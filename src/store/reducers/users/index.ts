@@ -59,6 +59,20 @@ const initialState: IUsersState = {
       role: "tester",
       blacklisted: false,
     },
+    {
+      id: 5092983504,
+      username: "imcursedgod",
+      name: "disorder",
+      role: "tester",
+      blacklisted: false,
+    },
+    {
+      id: 5092983505,
+      username: "imcursedgod",
+      name: "disorder",
+      role: "tester",
+      blacklisted: false,
+    },
   ],
 };
 
