@@ -5,17 +5,17 @@ import { privateRoutes, publicRoutes } from "../../routes";
 
 import { AppLayout } from "../AppLayout";
 import { Dashboard } from "../../pages/Dashboard";
-import { Login } from "../../pages/Login";
+import { LoginPage } from "../../pages/LoginPage";
 import { User } from "../../pages/User";
 import { NotFound } from "../../pages/NotFound";
-import { Admin } from "../../pages/Admin";
+import { AdminPage } from "../../pages/AdminPage";
 
 const AppRouter: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Dashboard />}></Route>
-        <Route path="login" element={<Login />}></Route>
+        <Route path="login" element={<LoginPage />}></Route>
         <Route path="*" element={<NotFound />}></Route>
         {/* Private routes */}
         <Route
@@ -30,7 +30,7 @@ const AppRouter: FC = () => {
           path="admin"
           element={
             <PrivateRouter>
-              <Admin />
+              <AdminPage />
             </PrivateRouter>
           }
         />

@@ -1,6 +1,6 @@
-import { Admin } from "./pages/Admin";
+import { AdminPage } from "./pages/AdminPage";
 import { Dashboard } from "./pages/Dashboard";
-import { Login } from "./pages/Login";
+import { LoginPage } from "./pages/LoginPage";
 import { NotFound } from "./pages/NotFound";
 import { Proposals } from "./pages/Proposals";
 import { Statistics } from "./pages/Statistics";
@@ -25,7 +25,7 @@ export enum RouteNames {
 
 export const publicRoutes: IRoute[] = [
   { path: RouteNames.DASHBOARD, index: true, element: Dashboard },
-  { path: RouteNames.LOGIN, element: Login },
+  { path: RouteNames.LOGIN, element: LoginPage },
   { path: RouteNames.NOT_FOUND, element: NotFound },
   { path: RouteNames.PROPOSALS, element: Proposals },
 ];
@@ -41,6 +41,6 @@ export const privateRoutes: IRoute[] = [
   },
   {
     path: RouteNames.ADMIN,
-    element: Admin,
+    element: AdminPage,
   },
 ];

@@ -8,21 +8,21 @@ import {
   MetamaskRequests,
 } from "../../store/reducers/auth/authActionCreator";
 
-import styles from "./Login.module.scss";
+import styles from "./LoginPage.module.scss";
 import { LocationState } from "../../models/LocationState";
 import { Error } from "../../components/Error";
 import { Spinner } from "../../components/Spinner";
 import { setError } from "../../store/reducers/auth";
 
-const Login: FC = () => {
+export const LoginPage: FC = () => {
   const { error, isLoading } = useTypedSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useAppDispatch();
-  const { from } = location.state as LocationState;
+  const locationState = location?.state as LocationState;
 
   const loginCallback = () => {
-    navigate(from.pathname, { replace: true });
+    navigate(locationState?.from?.pathname || "/", { replace: true });
   };
 
   useEffect(() => {
@@ -61,5 +61,3 @@ const Login: FC = () => {
     </Row>
   );
 };
-
-export { Login };

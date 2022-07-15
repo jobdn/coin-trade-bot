@@ -10,7 +10,7 @@ const StyledUserListTitle = styled(Row)`
   }
 `;
 
-export const UserListTitle: React.FC = () => {
+export const UserListTitle: React.FC = React.memo(() => {
   return (
     <StyledUserListTitle gutter={24}>
       <Col span={3}></Col>
@@ -21,4 +21,4 @@ export const UserListTitle: React.FC = () => {
       <Col span={2}></Col>
     </StyledUserListTitle>
   );
-};
+});
