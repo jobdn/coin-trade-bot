@@ -37,18 +37,19 @@ const userItems = [
       <FontAwesomeIcon icon={faUser} className={styles.icon} />
     </Link>
   ),
-  getItem(
-    2,
-    <Link to={RouteNames.STATISTICS} className={styles.link}>
-      <FontAwesomeIcon icon={faChartSimple} className={styles.icon} />
-    </Link>
-  ),
-  getItem(
-    4,
-    <Link to={RouteNames.PROPOSALS} className={styles.link}>
-      <FontAwesomeIcon icon={faClipboardList} className={styles.icon} />
-    </Link>
-  ),
+  // TODO: Add this menu items when its functionality will be completed
+  // getItem(
+  //   2,
+  //   <Link to={RouteNames.STATISTICS} className={styles.link}>
+  //     <FontAwesomeIcon icon={faChartSimple} className={styles.icon} />
+  //   </Link>
+  // ),
+  // getItem(
+  //   4,
+  //   <Link to={RouteNames.PROPOSALS} className={styles.link}>
+  //     <FontAwesomeIcon icon={faClipboardList} className={styles.icon} />
+  //   </Link>
+  // ),
 ];
 
 const adminItems = [

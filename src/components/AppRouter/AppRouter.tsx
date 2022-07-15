@@ -2,32 +2,38 @@ import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import PrivateRouter from "../../hoc/PrivateRouter";
 import { privateRoutes, publicRoutes } from "../../routes";
+
 import { AppLayout } from "../AppLayout";
+import { Dashboard } from "../../pages/Dashboard";
+import { Login } from "../../pages/Login";
+import { User } from "../../pages/User";
+import { NotFound } from "../../pages/NotFound";
+import { Admin } from "../../pages/Admin";
 
 const AppRouter: FC = () => {
   return (
     <Routes>
-      <Route element={<AppLayout />}>
-        {publicRoutes.map((route) => (
-          // TODO: Should I use such syntax as <route.element />
-          <Route
-            index={route.index}
-            path={route.path}
-            key={route.path}
-            element={<route.element />}
-          />
-        ))}
-        {privateRoutes.map((route) => (
-          <Route
-            path={route.path}
-            key={route.path}
-            element={
-              <PrivateRouter>
-                <route.element />
-              </PrivateRouter>
-            }
-          />
-        ))}
+      <Route path="/" element={<AppLayout />}>
+        <Route index element={<Dashboard />}></Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+        {/* Private routes */}
+        <Route
+          path="user"
+          element={
+            <PrivateRouter>
+              <User />
+            </PrivateRouter>
+          }
+        />
+        <Route
+          path="admin"
+          element={
+            <PrivateRouter>
+              <Admin />
+            </PrivateRouter>
+          }
+        />
       </Route>
     </Routes>
   );
