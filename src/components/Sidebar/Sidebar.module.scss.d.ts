@@ -1,13 +1,5 @@
-export type Styles = {
-  'admin': string;
-  'icon': string;
-  'link': string;
-  'sider': string;
-  'sider-menu': string;
-};
-
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;
+export const admin: string;
+export const icon: string;
+export const link: string;
+export const sider: string;
+export const siderMenu: string;

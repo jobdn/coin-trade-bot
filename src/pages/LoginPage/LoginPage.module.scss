@@ -1,8 +1,7 @@
 @import "../../styles/variables.scss";
 
-.login-row {
-  padding-top: 90px;
-  height: 100%;
+.loginRow {
+  padding: 90px;
   text-align: center;
   .title {
     color: $primaryColor;
@@ -10,13 +9,13 @@
     margin: 20px 0 170px;
     display: block;
   }
-  .sub-title {
+  .subTitle {
     color: $primaryColor;
     font-size: 36px;
   }
 }
 
-.connect-wallet {
+.connectWallet {
   height: auto;
   width: 300px !important;
   overflow: hidden;

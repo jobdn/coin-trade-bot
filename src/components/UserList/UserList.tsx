@@ -9,10 +9,10 @@ const UserListCointainer = styled.div`
   margin-top: 46px;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 650px;
 `;
 
 const StyledUserList = styled.div`
+  padding: 40px;
   @media screen and (min-width: 636px) {
     width: 500px;
   }

@@ -1,12 +1,4 @@
-export type Styles = {
-  'col': string;
-  'row': string;
-  'spinner': string;
-  'under-title': string;
-};
-
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;
+export const col: string;
+export const row: string;
+export const spinner: string;
+export const underTitle: string;

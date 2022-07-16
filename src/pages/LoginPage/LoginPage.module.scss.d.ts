@@ -1,12 +1,4 @@
-export type Styles = {
-  'connect-wallet': string;
-  'login-row': string;
-  'sub-title': string;
-  'title': string;
-};
-
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;
+export const connectWallet: string;
+export const loginRow: string;
+export const subTitle: string;
+export const title: string;

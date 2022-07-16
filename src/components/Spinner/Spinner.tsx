@@ -10,7 +10,7 @@ const Spinner: React.FC<{ message: string }> = ({ message }) => {
     <Row justify="center" align="middle" className={styles.row}>
       <Col className={styles.col}>
         <LoadingOutlined className={styles.spinner} />;
-        <Typography.Title level={2} className={styles["under-title"]}>
+        <Typography.Title level={2} className={styles.underTitle}>
           {message}
         </Typography.Title>
       </Col>

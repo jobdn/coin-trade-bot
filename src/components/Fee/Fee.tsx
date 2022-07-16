@@ -6,7 +6,7 @@ import styles from "./Fee.module.scss";
 export const Fee: React.FC = () => {
   return (
     <>
-      <Typography.Title level={2} className={styles["fee-title"]}>
+      <Typography.Title level={2} className={styles.feeTitle}>
         Fee Collected
       </Typography.Title>
       <Row>

@@ -79,7 +79,7 @@ const Sidebar: React.FC = () => {
       <Menu
         items={itemsRef.current}
         theme="dark"
-        className={styles["sider-menu"]}
+        className={styles.siderMenu}
         selectable={false}
       />
     </Sider>

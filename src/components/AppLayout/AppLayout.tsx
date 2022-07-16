@@ -23,7 +23,7 @@ const EllipseBg = styled.div`
 
 const AppLayout: FC = () => {
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout>
       <EllipseBg />
       <Header />
       <Layout className={styles.layout}>

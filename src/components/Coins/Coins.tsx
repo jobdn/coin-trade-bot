@@ -14,7 +14,7 @@ const Coins: React.FC = () => {
 
   return (
     <>
-      <Typography.Title level={2} className={styles["coins-title"]}>
+      <Typography.Title level={2} className={styles.coinsTitle}>
         Coins
       </Typography.Title>
       <Row>

@@ -12,17 +12,17 @@ export const CoinItem: React.FC<ICoin> = ({
   current_price,
 }) => {
   return (
-    <Row className={styles["coin-item"]}>
-      <Col span={4} className={styles["coin-item-col"]}>
+    <Row className={styles.coinItem}>
+      <Col span={4} className={styles.coinItemCol}>
         <Image alt={id} src={image} width="30px" preview={false} />
       </Col>
-      <Col span={4} className={styles["coin-item-col"]}>
+      <Col span={4} className={styles.coinItemCol}>
         {symbol.toUpperCase()}
       </Col>
-      <Col span={8} className={styles["coin-item-col"]}>
+      <Col span={8} className={styles.coinItemCol}>
         {name}
       </Col>
-      <Col span={8} className={styles["coin-item-col"]}>
+      <Col span={8} className={styles.coinItemCol}>
         {current_price}
       </Col>
     </Row>

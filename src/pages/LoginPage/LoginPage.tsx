@@ -42,16 +42,14 @@ export const LoginPage: FC = () => {
   if (error) return <Error message={error} savingLink="/" savingTitle="home" />;
 
   return (
-    <Row justify="center" className={styles["login-row"]}>
+    <Row justify="center" align="middle" className={styles.loginRow}>
       <Col>
-        <Typography.Text className={styles["sub-title"]}>
-          Dashboard
-        </Typography.Text>
+        <Typography.Text className={styles.subTitle}>Dashboard</Typography.Text>
         <Typography.Text className={styles.title}>
           Coin Trade Bot
         </Typography.Text>
         <Button
-          className={styles["connect-wallet"]}
+          className={styles.connectWallet}
           block
           onClick={onConnectWallet}
         >

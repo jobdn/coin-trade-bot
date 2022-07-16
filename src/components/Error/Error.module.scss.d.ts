@@ -1,11 +1,3 @@
-export type Styles = {
-  'error': string;
-  'text': string;
-  'title': string;
-};
-
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;
+export const error: string;
+export const text: string;
+export const title: string;

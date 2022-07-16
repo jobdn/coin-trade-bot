@@ -11,10 +11,10 @@ import { CoinSkeleton } from "../CoinSkeleton";
 export const CoinList: React.FC = () => {
   const { coins, isLoading } = useTypedSelector((state) => state.coins);
   return (
-    <div className={styles["coin-list"]}>
+    <div className={styles.coinList}>
       {coins.length > 0 ? (
         <>
-          <Row className={styles["coin-list-title"]}>
+          <Row className={styles.coinListTitle}>
             <Col span={4}>Img</Col>
             <Col span={4}>Sym</Col>
             <Col span={8}>Name</Col>
@@ -29,7 +29,7 @@ export const CoinList: React.FC = () => {
           })}
         </>
       ) : (
-        <div className={styles["not-found"]}>
+        <div className={styles.coinsNotFound}>
           <p>There is not such tokens</p>
         </div>
       )}

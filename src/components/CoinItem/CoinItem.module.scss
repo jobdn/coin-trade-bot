@@ -1,5 +1,5 @@
 @import "../../styles/variables.scss";
-.coin-item {
+.coinItem {
   width: 100%;
   color: $primaryColor;
   border-bottom: 2px solid $primaryColor;
@@ -8,7 +8,7 @@
   &:first-child {
     margin-top: 5px;
   }
-  &-col {
+  &Col {
     display: flex;
     align-items: center;
   }
