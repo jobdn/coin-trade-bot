@@ -15,10 +15,10 @@ export const CoinsSearch: React.FC = () => {
   };
 
   React.useEffect(() => {
-    const fetchCoinsId = setTimeout(() => {
-      dispatch(fetchCoins(search));
-    }, 1000);
-    return () => clearTimeout(fetchCoinsId);
+    // const fetchCoinsId = setTimeout(() => {
+    //   dispatch(fetchCoins(search));
+    // }, 1000);
+    // return () => clearTimeout(fetchCoinsId);
   }, [search]);
 
   return (

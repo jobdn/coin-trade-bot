@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./styles/App.scss";
 import { AppRouter } from "./components/AppRouter";
 import { useAppDispatch } from "./hook/redux";
 import {
   authActionCreator,
   MetamaskRequests,
 } from "./store/reducers/auth/authActionCreator";
+
+import "./styles/App.scss";
 
 function App() {
   const dispatch = useAppDispatch();

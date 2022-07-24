@@ -9,6 +9,7 @@ import { LoginPage } from "../../pages/LoginPage";
 import { User } from "../../pages/User";
 import { NotFound } from "../../pages/NotFound";
 import { AdminPage } from "../../pages/AdminPage";
+import { Cryptocurrencies } from "../Cryptocurrencies";
 
 const AppRouter: FC = () => {
   return (
@@ -16,6 +17,7 @@ const AppRouter: FC = () => {
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Dashboard />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
+        <Route path="cryptocurrencies" element={<Cryptocurrencies />}></Route>
         <Route path="*" element={<NotFound />}></Route>
         {/* Private routes */}
         <Route

@@ -1,0 +1,9 @@
+@import-normalize;
+@import "~antd/dist/antd.css";
+@import url("https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;900&display=swap");
+
+// Base
+@import "./base/reset";
+
+// Abstract
+@import "./abstract/variables";
