@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AppRouter } from "./components/AppRouter";
 import { useAppDispatch } from "./hook/redux";
@@ -14,9 +14,15 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const reloadLogin = () => navigate(location.pathname, { replace: true });
     dispatch(authActionCreator(MetamaskRequests.ETH_ACCOUNTS, reloadLogin));
+  }, []);
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((data) => data.json())
+      .then(console.log);
   }, []);
 
   return <AppRouter />;
